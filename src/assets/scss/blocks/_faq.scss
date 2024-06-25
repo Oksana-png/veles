@@ -1,0 +1,53 @@
+.faq {
+  
+}
+
+.tabs {
+  gap: 0 20px;
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+  @include tablet768 {
+    grid-template-columns: 1fr;
+  }
+  &__item {
+    line-height: 1;
+    border-bottom: 1px solid #D5D8DC;
+    &.active {
+      & .tabs__item-content {
+        padding: 25px;
+        overflow: visible;
+        max-height: 400px;
+        transition: all .3s ease;
+      }
+      & .tabs__item-title {
+        color: $c-primary;
+        fill: $c-primary;
+      }
+    }
+
+    &-title {
+      cursor: pointer;
+      padding: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      color: $c-main;
+      font-size: 16px;
+      font-weight: 700;
+      transition: color .3s ease;
+
+      .fontawesome {
+        fill: inherit;
+      }
+    }
+    &-content {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0;
+      padding-left: 25px;
+      transition: all .3s ease;
+      line-height: 1.6em;
+    }
+  }
+}

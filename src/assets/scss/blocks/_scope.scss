@@ -1,0 +1,43 @@
+.scope {
+  &__container {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 30px;
+
+    @include laptop {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  &-list {
+    & ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px 20px;
+      @include media(600px) {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+    }
+    & li {
+      display: flex;
+      align-items: flex-start;
+      &::before {
+        content: '';
+        width: 12px;
+        height: 12px;
+        display: block;
+        background-color: $c-primary;
+
+        flex-shrink: 0;
+        margin-top: 6px;
+        margin-right: 15px;
+        @include media(600px) {
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+}

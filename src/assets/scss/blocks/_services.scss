@@ -1,0 +1,34 @@
+.services-slider {
+  & .swiper-slide {
+    padding: 8.5px 0%;
+    background-color: rgb(255, 255, 255);
+    min-height: 150px;
+  }
+
+  & .services-item {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    margin: 0px 11px;
+    box-shadow: 0 7px 12px 0 rgb(0 0 0 / 25%);
+    height: 130px;
+    padding-top: 40px;
+    transition: all .2s linear;
+    @include hover {
+      &:hover {
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 40%);
+      }
+    }
+
+    & img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      margin-right: 20px;
+    }
+
+    & h3 {
+      font-size: 20px;
+    }
+  }
+}

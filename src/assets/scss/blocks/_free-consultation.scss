@@ -1,0 +1,53 @@
+.free-consultation {
+  padding: 80px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 55px -159px;
+  background-color: #f7f6f6;
+
+  @include laptop {
+    background-position: center center;
+    background-size: cover;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    align-items: center;
+
+    @include tablet768 {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      text-align: center;
+    }
+  }
+
+  & .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 165px;
+    margin: 0 auto;
+
+    @include laptop {
+      margin-right: 0;
+    }
+    @include tablet768 {
+      margin: 0 auto;
+    }
+  }
+
+  & h3 {
+    font-size: 26px;
+    line-height: 1.3em;
+    margin-bottom: 20px;
+  }
+
+  & p {
+    font-size: 20px;
+    @include laptop {
+      font-size: 16px;
+    }
+  }
+}

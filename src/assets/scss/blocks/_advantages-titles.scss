@@ -1,0 +1,31 @@
+.advantages-titles {
+  padding: 100px 0;
+  background-size: cover;
+  background-position: center;
+  color: $c-white;
+  @include tablet768 {
+    padding: 60px 0;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    @include laptop {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 20px;
+    }
+
+    @include tablet768 {
+      grid-template-columns: 1fr;
+      
+    }
+  }
+  &__item {
+    text-align: center;
+    font-size: 20px;
+    font-family: "Rubik", Sans-serif;
+    font-weight: 700;
+  }
+}

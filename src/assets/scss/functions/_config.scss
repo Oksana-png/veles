@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  &::selection {
+    background-color: $c-primary;
+    color: $c-white;
+  }
+}
+
+html {
+  overflow: auto;
+}
+
+body {
+  font-family: "Roboto", Sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  color: $c-main;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+
+  &.fixed {
+    position: fixed;
+    width: 100%;
+  }
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+h1 {
+  font-size: 61px;
+  font-weight: 700;
+  font-family: "Rubik", Sans-serif;
+  line-height: 1em;
+  @include laptop {
+    font-size: 51px;
+  }
+  @include tablet768 {
+    font-size: 2rem;
+  }
+}
+
+h2 {
+  font-size: 41px;
+  margin-bottom: 55px;
+  @include tablet768 {
+    font-size: 27px;
+  }
+}
+
+h3 {
+  font-family: "Rubik", Sans-serif;
+  font-size: 27px;
+  line-height: 1.2;
+  &.title-decore {
+    margin-bottom: 15px;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  transition: color 0.3s ease-out;
+  transition-property: background, color;
+  display: inline-block;
+  text-decoration: none;
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:hover {
+    color: $c-primary;
+    text-decoration: none;
+    fill: $c-primary;
+  }
+}
+
+button {
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+img,
+button {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+picture {
+  display: inline-block;
+  line-height: 0;
+  font-size: 0;
+}
+
+input {
+  outline: none;
+}
+
+.fontawesome {
+  width: 14px;
+  height: 14px;
+  font-weight: 900;
+  font-size: 14px;
+  fill: $c-primary;
+
+  transition: all 0.3s ease;
+}

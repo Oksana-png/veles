@@ -1,0 +1,211 @@
+.quiz {
+  &__subtitle {
+    font-size: 18px;
+    @include tablet768 {
+      font-size: 14px;
+    }
+  }
+  &-form {
+    position: relative;
+
+    &__pagin {
+      display: grid;
+      grid-template-columns: 1fr 100px;
+      align-items: center;
+      text-align: right;
+      @include tablet768 {
+        grid-template-columns: 1fr 50px;
+      }
+      &-number {
+        font-size: 18px;
+        @include tablet768 {
+          font-size: 14px;
+        }
+      }
+    }
+    &__nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+      @include desktop {
+        margin-top: 30px;
+      }
+    }
+    &__wrap {
+      & input {
+        width: 100%;
+        color: $c-main;
+
+        &::placeholder {
+          color: $c-main;
+        }
+        &.error {
+          &::placeholder {
+            color: $c-primary;
+          }
+        }
+      }
+
+      & label {
+        display: block;
+        font-family: 'Rubik', sans-serif;
+        font-size: 27px;
+        font-weight: 700;
+        color: inherit;
+        margin-bottom: 14px;
+        @include tablet768 {
+          font-size: 21px;
+        }
+      }
+    }
+    &__swiper {
+      &-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+        @include desktop {
+          grid-template-columns: 1fr 1fr .7fr;
+        }
+        @include laptop {
+          grid-template-columns: 1fr 1fr;
+        }
+        @include tablet768 {
+          grid-template-columns: 1fr;
+        }
+      }
+      &-item {
+        color: $c-white;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        @include laptop {
+          &:last-child {
+            grid-column: span 2;
+          }
+        }
+        @include tablet768 {
+          &:last-child {
+            grid-column: span 1;
+          }
+        }
+      }
+    }
+  }
+  & .modal__body {
+    overflow-y: scroll;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    background-image: url('../image/bg/quiz-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: $c-white;
+    @include tablet768 {
+      padding: 25px 10px;
+    }
+  }
+  & .swiper-slide {
+    & h2 {
+      margin-bottom: 70px;
+      @include desktop {
+        margin-bottom: 50px;
+      }
+      @include tablet768 {
+        text-align: center;
+      }
+    }
+  }
+  & .swiper-pagination {
+    position: relative;
+    height: 18px;
+    border-radius: 100px;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: $c-white;
+    border: none;
+
+    & > .swiper-pagination-progressbar-fill {
+      border-radius: 100px;
+      background-color: $c-primary;
+      height: 19px;
+    }
+  }
+
+  & h2 {
+    font-family: 'Rubik', sans-serif;
+    margin-bottom: 14px;
+  }
+
+  & .modal-close {
+    fill: $c-white;
+  }
+
+  & .btn.swiper-button-disabled {
+    display: none;
+  }
+
+  & .checkbox {
+    margin-top: 85px;
+    margin-bottom: 20px;
+    @include tablet768 {
+      margin-top: 30px;
+    }
+  }
+}
+
+.checkbox {
+  &__rect {
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    background-color: $c-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    & svg {
+      width: 17px;
+      fill: transparent;
+      stroke: $c-white;
+      transform: translate(-5px, -3px);
+      transition: transform 0.2s ease-out;
+    }
+  }
+
+  & input:checked+label .checkbox__rect {
+    background-color: $c-primary;
+    border: 0px;
+
+    & svg {
+      transform: translate(-0, 0);
+    }
+  }
+
+  & label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 18px;
+    line-height: 22.4px;
+    @include tablet768 {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    & a {
+      text-decoration: underline;
+    }
+  }
+
+  & input {
+    display: none;
+    position: absolute;
+    font-size: 0;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+  }
+}

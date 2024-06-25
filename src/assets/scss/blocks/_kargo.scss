@@ -1,0 +1,104 @@
+.kargo {
+  & .swiper {
+    padding-bottom: 0;
+  }
+
+  &__item {
+    position: relative;
+    min-height: 500px;
+    overflow: hidden;
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      background: rgba(0, 0, 0, .5);
+      width: 100%;
+      height: 100%;
+      left: 0;
+    }
+    @include hover {
+      &:hover {
+        & .kargo__item-content {
+          opacity: 1;
+          max-height: 100%;
+          bottom: 0;
+        }
+
+        &::before {
+          bottom: 0;
+        }
+      }
+    }
+    &-link {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    & img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    } 
+    & h3 {
+      position: relative;
+      z-index: 5;
+      margin-top: 40px;
+      text-align: center;
+      font-size: 27px;
+      color: $c-white;
+    }
+    &-content {
+      display: flex;
+      position: absolute;
+      z-index: 99;
+      width: 100%;
+      padding: 40px 30px;
+      background-color: $c-main;
+      bottom: -20%;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      
+      opacity: 0;
+      text-align: center;
+      transition: all 0.3s ease 0s;
+
+      @include tablet768 {
+        background: rgb(64 63 73 / 55%);
+        opacity: 1;
+        bottom: 0;
+      }
+      & p {
+        color: $c-white;
+      }
+      & .btn {
+        color: $c-white;
+        background-color: $c-primary;
+
+      }
+    }
+  }
+}
+
+.swiper-kargo {
+  @include hover {
+    &:hover {
+      & .swiper-navigation-new {
+        padding: 0 10px;
+      }
+      & .navigation-new__arrow {
+        opacity: 1;
+      }
+    }
+  }
+}

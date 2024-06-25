@@ -1,0 +1,402 @@
+.header {
+  position: relative;
+  z-index: 10;
+  color: $c-main;
+  fill: $c-main;
+
+  &-black {
+    color: $c-white;
+    fill: $c-white;
+
+    & .search-btn {
+      color: #fff;
+    }
+    
+    & .languages li {
+      &.active {
+        color: $c-white;
+      }
+      & .fontawesome {
+        fill: $c-white;
+      }
+
+    }
+  }
+
+  &-top {
+    &__wrapper {
+      min-height: 50px;
+      border-bottom: 1px solid #fff;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__contacts {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        @include laptop {
+          &:nth-child(2) {
+            display: none;
+          }
+        }
+        @include tablet768 {
+          &:nth-child(3) {
+            display: none;
+          }
+        }
+        & .fontawesome {
+          width: 15px;
+          height: 15px;
+          fill: inherit;
+        }
+      }
+    }
+
+    &__right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      &-wrap {
+        position: relative;
+      }
+      &-whatsapp {
+        @include tablet768 {
+          display: none;
+        }
+        & img {
+          width: 35px;
+          vertical-align: middle;
+        }
+      }
+      &-btn {
+        height: 26px;
+        width: 18px;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  &-bottom {
+    transition: transform .6s ease-out;
+    &.fixed {
+      position: fixed;
+      width: 100%;
+      top: 0;
+
+      background-color: $c-white;
+      color: $c-main;
+      fill: $c-main;
+    }
+    &__wrapper {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 20px;
+      @include desktop {
+        grid-template-columns: 180px 1fr;
+      }
+    }
+
+    &__menu {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 35px;
+      @include tablet768 {
+        & .btn {
+          display: none;
+        }
+      }
+      &--burger {
+        display: none;
+        position: relative;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        width: 48px;
+        height: 48px;
+        overflow: hidden;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @include laptop {
+          display: flex;
+        }
+        &::after, &::before {
+          content: "";
+          position: absolute;
+          left: 10px;
+          height: 2px;
+          width: 28px;
+          background-color: $c-white;
+          transition: all 0.3s ease-in-out;
+        }
+        &::before {
+          top: 14px;
+        }
+        &::after {
+          top: 32px;
+        }
+        & span {
+          position: absolute;
+          left: 10px;
+          display: block;
+          width: 28px;
+          height: 2px;
+          background-color: $c-white;
+        }
+        &.active {
+          & span {
+            transform: rotate(45deg);
+          }
+          &::before {
+            top: 23px;
+            transform: rotate(-45deg);
+          }
+          &::after {
+            top: -50px;
+          }
+        }
+      }
+    }
+    & .logo {
+      height: 120px;
+      padding: 14px 0;
+      @include tablet768 {
+        height: auto;
+      }
+    }
+  }
+
+}
+
+
+
+.menu {
+  &-list {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    @include desktop {
+      gap: 12px;
+    }
+    @include laptop {
+      display: none;
+    }
+    &>li {
+      position: relative;
+      line-height: 70px;
+      @include hover {
+        &:hover {
+          & > .menu-list__sublist {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+    & a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    &__sublist {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      top: 100%;
+      box-shadow: 0 4px 10px -2px rgba(0, 0, 0, .1);
+      line-height: 1.45;
+      border-top: 2px solid $c-primary;
+      width: 240px;
+      background-color: $c-white;
+      color: $c-main;
+      fill: $c-main;
+
+      transition: all .3s ease-out;
+      & .menu-list__sublist {
+        right: -100%;
+        top: -2px;
+      }
+      &>li {
+        position: relative;
+        @include hover {
+          &:hover {
+            & .menu-list__sublist {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+        & > a {
+          padding: 12px 14px;
+          line-height: inherit;
+          & .fontawesome {
+            transform: rotate(-90deg);
+          }
+        }
+      }
+    }
+  }
+
+  & .fontawesome {
+    fill: inherit
+  }
+}
+
+
+.languages {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  & li {
+    padding-right: 14px;
+    background-color: #fff;
+    color: $c-main;
+    width: 100%;
+    & a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px;
+      padding-right: 0;
+      @include laptop {
+        & .fontawesome {
+          display: none;
+        }
+      }
+      &:hover {
+        & .fontawesome {
+          fill: $c-primary;
+        }
+      }
+    }
+    & .fontawesome {
+      fill: $c-main;
+    }
+    & > .fontawesome {
+      display: none;
+      @include laptop {
+        display: block;
+      }
+    }
+    &.active {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: transparent;
+      @include hover {
+        &:hover {
+          & .languages-sub {
+            opacity: 1;
+            max-height: 100px;
+          }
+        }
+      }
+    }
+  }
+
+  & .languages-sub {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .3s ease-out;
+    &.active {
+      opacity: 1;
+      max-height: 100px;
+    }
+  }
+}
+
+.burger-menu {
+  position: fixed;
+  top: 138px;
+  right: 0;
+  left: 0;
+  width: 100%;
+  bottom: auto;
+  z-index: 1001;
+  overflow: hidden;
+  opacity: 0;
+  height: 0;
+  background-color: #f9f9f9;
+  transition: all .3s ease-out;
+  padding: 0px;
+  &.active {
+    overflow: scroll;
+    opacity: 1;
+    bottom: 0;
+    padding: 20px;
+    height: auto;
+  }
+
+  & a {
+    height: 42px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  & .dropdown-catalog {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &__hidden {
+      flex-basis: 100%;
+    }
+    & > .dropdown-catalog__hidden {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      padding-left: 10px;
+
+      transition: all .3s ease-out;
+      &.active {
+        max-height: 400px;
+        overflow: visible;
+        opacity: 1;
+      }
+      & a {
+        & .fontawesome {
+          width: 7px;
+          height: 20px;
+        }
+      }
+    }
+    & .fontawesome {
+      fill: $c-main;
+      width: 13px;
+      height: 22px;
+    }
+    & > .fontawesome {
+      width: 40px;
+      height: 40px;
+      padding: 9px;
+    }
+    & > a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      & > .fontawesome {
+        width: 7px;
+        height: 20px;
+      }
+    }
+  }
+}

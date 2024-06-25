@@ -1,0 +1,46 @@
+.advantages {
+  padding: 90px 0;
+  background-size: cover;
+  color: #fff;
+  @include tablet768 {
+    padding: 40px 0;
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @include laptop {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include tablet768 {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+  &__item {
+    padding: 10px;
+    text-align: center;
+
+    &-icon {
+      width: 53px;
+      height: 53px;
+      margin: 0 auto;
+      margin-bottom: 15px;
+      transition: transform .3s;
+      & .fontawesome {
+        width: 100%;
+        height: 100%;
+        fill: $c-white;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    & h3 {
+      font-family: "Rubik", Sans-serif;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+  }
+}

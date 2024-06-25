@@ -1,0 +1,42 @@
+.breadcrumbs {
+  &-top {
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 56px 0;
+
+    & h1 {
+      color: $c-white;
+      text-align: center;
+    }
+  }
+
+  & .fontawesome {
+    fill: $c-main;
+    width: 17px;
+    height: 15px;
+  }
+
+  & nav {
+    padding: 5px 0;
+  }
+  & ul {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    @include tablet768 {
+      flex-wrap: wrap;
+    }
+  }
+  & a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 15px 0;
+    &:hover {
+      & .fontawesome {
+        fill: $c-primary;
+      }
+    }
+  }
+  
+}

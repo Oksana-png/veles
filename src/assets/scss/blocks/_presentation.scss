@@ -1,0 +1,34 @@
+.presentation {
+  padding: 80px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+
+  @include tablet768 {
+    padding: 60px 0;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 42% 1fr;
+    align-items: center;
+
+    @include tablet768 {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+
+  & h3 {
+    margin-bottom: 35px;
+    font-size: 26px;
+  }
+
+  & p {
+    margin-bottom: 35px;
+    font-size: 18px;
+    @include tablet768 {
+      font-size: 14px;
+    }
+  }
+}

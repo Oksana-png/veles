@@ -1,0 +1,81 @@
+.footer {
+  &-top {
+    background-color: $c-main;
+    padding-top: 77px;
+    padding-bottom: 45px;
+    color: #fff;
+  }
+  &-bottom {
+    padding: 20px 0;
+    text-align: center;
+    color: #3A3A3A;
+
+    & p {
+      height: 80px;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+
+    @include media(810px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+    @include media(500px) {
+      gap: 20px;
+    }
+  }
+  
+  &__item {
+    &:first-child {
+      @include media(544px) {
+        grid-column: span 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    &-links {
+      display: flex;
+      align-items: flex-start;
+      gap: 5px;
+      margin-bottom: 8px;
+    }
+    &-phones {
+      display: flex;
+      flex-direction: column;
+    }
+    &-subtitle {
+      line-height: 1.5;
+      margin-top: 39px;
+    }
+    &-title {
+      position: relative;
+      font-weight: 600;
+      padding-bottom: 16px;
+      margin-bottom: 30px;
+      color: $c-primary;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: 50px;
+        height: 2px;
+        background-color: #fff;
+      }
+    }
+    & ul {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    &>ul a {
+      line-height: 1.6em;
+    }
+  }
+}

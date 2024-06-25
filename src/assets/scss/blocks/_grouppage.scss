@@ -1,0 +1,80 @@
+.grouppage {
+  padding: 90px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $c-white;
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    gap: 70px;
+    @include laptop {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+  }
+  &-content {
+    & p {
+      margin-bottom: 20px;
+      font-weight: 500;
+      line-height: 25.2px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  & .btn {
+    margin-top: 30px;
+  }
+
+  &__scheme {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    &>p {
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    &-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 20px;
+        right: -19px;
+        width: 30px;
+        height: 30px;
+        background-image: url("../img/icon/next-light.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      &:last-child {
+        &::after {
+          display: none;
+        }
+        & img {
+          margin-bottom: 10px;
+        }
+      }
+      & img {
+        width: auto;
+        height: 60px;
+        object-fit: cover;
+      }
+    }
+  }
+}

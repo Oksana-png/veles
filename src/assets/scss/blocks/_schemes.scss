@@ -1,0 +1,207 @@
+.schemes {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 25px;
+    @include laptop {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+  }
+  &__item {
+    background-position: 0 10px;
+    background-repeat: no-repeat;
+    background-image: url('../img/icon/road.svg');
+    @include laptop {
+      background-image: url('../img/icon/road-vert.jpg');
+      background-position: 13px 0;
+      background-size: contain;
+      display: flex;
+      align-items: center;
+      min-width: 300px;
+    }
+    &--first {
+      background-position: 126px 10px;
+      @include laptop {
+        background-position: 13px 38px;
+      }
+    }
+    &--last {
+      background-position: -126px 10px;
+      @include laptop {
+        background-position: 13px -38px;
+      }
+    }
+    &-img {
+      text-align: center
+    }
+    & > p {
+      text-align: center;
+      font-size: 20px;
+      @include laptop {
+        font-size: 18px;
+        text-align: left;
+      }
+    }
+    & img {
+      padding-bottom: 20px;
+      @include laptop {
+        padding: 30px 0;
+        padding-right: 20px;
+      }
+    }
+  }
+  &-kit {
+    & picture {
+      width: 100%;
+      margin-bottom: 40px;
+      @include laptop {
+        margin-bottom: 0;
+      }
+      & img {
+        width: 100%;
+      }
+    }
+    &__list {
+      display: grid;
+      grid-template-columns: 180px 360px 236px 1fr;
+      margin-top: 30px;
+      @include desktop {
+        grid-template-columns: 151px 345px 236px 1fr;
+      }
+      @include laptop {
+        display: none;
+      }
+    }
+    &__item {
+      &:first-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        text-align: center;
+      }
+      &-flag {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 20px;
+        margin-bottom: 62px;
+        margin-left: -5px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      &-road {
+        margin-top: -28px;
+        & p {
+          text-align: center;
+          font-size: 20px;
+          background-position: 0 bottom;
+          background-repeat: no-repeat;
+          background-image: url('../img/icon/road.svg');
+          padding-bottom: 30px;
+          margin-bottom: 40px;
+          margin-left: -34px;
+          position: relative;
+          z-index: -1;
+        }
+      }
+    }
+  }
+  &-kit-rus {
+    & picture {
+      width: 100%;
+      & img {
+        width: 100%;
+      }
+    }
+    &__list {
+      display: grid;
+      grid-template-columns: 600px 250px 1fr;
+      padding: 0 50px;
+      padding-left: 120px;
+      @include desktop {
+        padding: 0 30px;
+      }
+      @include media(1149px) {
+        padding: 0 10px;
+      }
+      @include media(1100px) {
+        padding: 0 0px;
+        padding-left: 21px;
+      }
+      @include laptop {
+        display: none;
+      }
+    }
+    &__item {
+      &:first-child {
+        display: grid;
+        grid-template-columns: 180px 180px;
+        gap: 37px;
+        
+        height: 340px;
+        background-repeat: no-repeat;
+        background-image: url("../img/svg/rus-road-1.svg");
+        background-size: contain;
+
+        text-align: center;
+        font-size: 20px;
+        &>p {
+          margin-left: -113px;
+          margin-top: 77px;
+        }
+      }
+      &:last-child {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: -60px;
+        margin-left: -112px;
+
+        align-items: center;
+        text-align: center;
+        & p {
+          font-size: 20px;
+        }
+      }
+      &:nth-child(2) {
+        margin-left: -17px;
+        margin-right: -10px;
+        position: relative;
+        z-index: -1;
+        background-repeat: no-repeat;
+        background-image: url("../img/icon/road.svg");
+        background-position: center;
+        &>p {
+          margin-top: 87px;
+          margin-left: -105px;
+          font-size: 20px;
+        }
+      }
+      &-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 100px 0px;
+      }
+    }
+  }
+}
+
+.scale-up-center img {
+  -webkit-animation: scale-up-center .9s cubic-bezier(.39, .575, .565, 1) infinite alternate both;
+  animation: scale-up-center .9s cubic-bezier(.39, .575, .565, 1) infinite alternate both;
+}
+
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}

@@ -1,0 +1,57 @@
+.office {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @include laptop {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include tablet768 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    padding: 10px;
+    text-align: center;
+    &-wrap {
+      height: 100%;
+      box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, .2);
+      padding: 55px 30px;
+      transition: box-shadow .3s;
+
+      &:hover {
+        color: $c-primary;
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, .4);
+        & .title-decore::after {
+          background-color: $c-primary;
+        }
+        & a {
+          color: $c-primary;
+        }
+      }
+    }
+
+    & ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      & a {
+        font-weight: 700;
+        line-height: 22px;
+        color: #333;
+      }
+    }
+
+    & .title-decore {
+      margin-bottom: 25px;
+    }
+
+    & .subtitle {
+      margin-bottom: 20px;
+    }
+  }
+
+  & h3 {
+    font-size: 20px;
+  }
+}

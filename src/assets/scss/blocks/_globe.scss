@@ -1,0 +1,34 @@
+.globe {
+  @include laptop {
+    display: none;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 56% 1fr;
+    @include desktop {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  & h2 {
+    max-width: 410px;
+  }
+
+  & .btn {
+    margin-top: 60px;
+  }
+
+  & .list-mashin {
+    & ul {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+    }
+    & li {
+      @include desktop {
+        align-items: flex-start;
+      }
+    }
+  }
+}

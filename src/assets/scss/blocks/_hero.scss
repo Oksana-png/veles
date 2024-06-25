@@ -1,0 +1,107 @@
+.hero {
+  color: #fff;
+  margin-top: -170px;
+
+  & h1 {
+    margin-bottom: 40px;
+    max-width: 700px;
+  }
+  & p {
+    font-size: 28px;
+    max-width: 600px;
+    @include laptop {
+      font-size: 1.7rem;
+      line-height: 1.4em;
+    }
+    @include tablet768 {
+      font-size: 1.3rem;
+    }
+  }
+
+  & .swiper-slide {
+    position: relative;
+    padding: 17em 0;
+    padding-bottom: 288px;
+  
+    @include desktop {
+      padding: 10em 0;
+    }
+  
+    @include tablet768 {
+      padding: 80px 0;
+      padding-top: 168px;
+      text-align: center;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  & .wrapper {
+    position: relative;
+  }
+  &-quiz {
+    padding: 40px 50px;
+    background-color: #F7F6F6;
+    color: $c-main;
+    max-width: 400px;
+
+    position: absolute;
+    top: -54px;
+    right: 0;
+    @include desktop {
+      position: relative;
+      top: auto;
+      padding: 20px 30px;
+      max-width: 340px;
+      margin: 0 auto;
+      margin-top: 30px;
+    }
+    & .swiper-slide {
+      padding: 0;
+      display: grid;
+      gap: 24px;
+      &__end {
+        grid-template-columns: 138px 138px;
+        &-email {
+          grid-column: span 2;
+        }
+        & >p {
+          grid-column: span 2;
+        }
+      }
+      & p {
+        font-size: 12.8px;
+        text-align: center;
+      }
+    }
+    & h3 {
+      margin-bottom: 30px;
+      text-align: center;
+      @include tablet768 {
+        margin-bottom: 20px;
+        font-size: 20px;
+      }
+    }
+    &__nav {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+
+      & .swiper-button-disabled {
+        display: none;
+      }
+    }
+
+  }
+}
