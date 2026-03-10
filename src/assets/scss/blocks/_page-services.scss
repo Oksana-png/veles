@@ -37,7 +37,7 @@
 
     & li {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       font-size: 14px;
 
       &::before {
@@ -46,6 +46,7 @@
         flex-shrink: 0;
         width: 15px;
         height: 15px;
+        margin-top: 6px;
         margin-right: 8px;
         background-image: url('../img/svg/check.svg');
         background-repeat: no-repeat;

@@ -1,5 +1,7 @@
 .types {
   margin-top: -100px;
+  position: relative;
+  z-index: 3;
   @include tablet768 {
     margin-top: 0;
     margin-bottom: 60px;

@@ -150,6 +150,17 @@ function modalAll() {
   }
 
   modal();
+
+  const modalSuccess = document.querySelector('.modal__success');
+  modalSuccess.addEventListener('click', (e) => {
+    if (e.target.closest(".modal-close")) {
+      modalClose('.modal__success');
+    }
+    if (e.target.closest(".modal__body")) {
+      return;
+    }
+    modalClose('.modal__success');
+  });
 }
 
 function burgerMenu() {

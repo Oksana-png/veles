@@ -49,6 +49,12 @@
     }
   }
 
+  & input {
+    &:focus {
+      color: $c-main !important;
+    }
+  }
+
   & h2 {
     font-family: "Rubik", Sans-serif;
     @include laptop {
@@ -69,9 +75,6 @@ input {
   color: $c-main;
   background-color: $c-white;
   border: none;
-  &:focus {
-    color: inherit;
-  }
   &::placeholder {
     color: $c-main;
   }
@@ -184,4 +187,16 @@ input::-webkit-inner-spin-button {
 
 .form-hero-quiz {
   overflow: hidden;
+}
+
+
+.form-contacts .form-steps__form {
+  height: auto;
+}
+
+.form-contact {
+  height: auto;
+  & input {
+    margin-bottom: 20px;
+  }
 }

@@ -58,6 +58,42 @@
     }
   }
 
+  &__success {
+    & .modal__body {
+      max-width: 1170px;
+      height: 684px;
+      padding: 30px 100px;
+      max-height: 90%;
+      overflow-y: scroll;
+      text-align: center;
+      display: grid;
+      align-items: center;
+      place-content: center;
+      @include tablet768 {
+        padding: 30px 20px;
+      }
+    }
+    &-icon {
+      flex-shrink: 0;
+      width: 95px;
+      height: 95px;
+      fill: $c-primary;
+      margin: 0 auto;
+      @include tablet768 {
+        width: 50px;
+        height: 50px;
+      }
+    }
+    & h2 {
+      margin-top: 32px;
+      margin-bottom: 100px;
+      text-align: center;
+      @include laptop {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
   &-close {
     position: absolute;
     top: 10px;

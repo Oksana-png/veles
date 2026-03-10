@@ -23,7 +23,7 @@
     & ul {
       display: flex;
       flex-direction: column;
-      gap: 35px;
+      gap: 10px;
     }
     & li {
       @include desktop {
